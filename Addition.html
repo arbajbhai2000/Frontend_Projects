@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Add two Number</h1>
+
+    <table>
+        <tr>
+            <td> enter first number</td>
+            <td>
+                <input type="text" id="first" />
+            </td>
+        </tr>
+        <tr>
+            <td> enter second number</td>
+            <td>
+                <input type="text" id="second" />
+            </td>
+        </tr>
+        <tr>
+            <td
+                colspan="2">
+
+                <input type="button" value="add two number" onclick="add()" />
+            </td>
+        </tr>
+        <tr>
+            <td>result</td>
+            <td>
+                <input type="text" id="result" />
+            </td>
+        </tr>
+
+    </table>
+
+    <script>
+        function add() {
+            var first = document.getElementById('first').value;
+            var second = document.getElementById('second').value;
+
+            var result = parseInt(first) + parseInt(second) ;
+            document.getElementById('result').value = result;
+
+            //document.getElementById('first').value = first;
+
+            //console.log(a);
+
+        }
+    </script>
+
+
+
+
+</body>
+</html>
