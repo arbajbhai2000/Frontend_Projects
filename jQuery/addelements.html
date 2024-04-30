@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Add Elements</h2>
+
+    <input type="button" value="Click Mee!!!" id="btn"/>
+    <div>
+        <p id="p1"><b>Original Paragraph Text</b></p>
+    </div>
+
+    <table id="tbl">
+        <tr>
+            <td>
+                <input type="text"/>
+            </td>
+            <td>
+                <input type="text"/>
+            </td>
+            <td>
+                <input type="button" value="+" id="add"/>
+            </td>
+
+        </tr>
+    </table>
+
+    <script src="scripts/Jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                $('#p1').append('Appended Text');
+                $('#p1').prepend('Prepended Text');
+                $('#p1').before('Before Text');
+                $('#p1').after('After Text');
+            });
+
+            //$('#add').click(function () {
+            //    var row = `<tr>
+            //    <td><input type="text"/></td>
+            //    <td><input type="text"/></td>
+            //    <td><input type="button" value="+" id="add"/></td>
+            //    </tr>`;
+            //    $('#tbl').append(row);
+            //})
+
+            var counter = 1;
+            var maxpassanger = 4;
+            $('#tbl').on("click", "[value='+']", function () {
+                if (counter <= maxpassanger) {
+                    var row = `<tr>
+                      <td><input type="text"/></td>
+                      <td><input type="text"/></td>
+                       <td><input type="button" value="+" id="add"/></td>
+                    </tr>`;
+                    counter++;
+                } else {
+                    alert('maximum 5 passanger allowed per ticket');
+                }
+                $('#tbl').append(row);
+            })
+        });
+
+        $('#btn').click(function () {
+            $('#tbl').remove();
+        });
+
+
+
+    </script>
+
+
+
+</body>
+</html>
