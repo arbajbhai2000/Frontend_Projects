@@ -1,0 +1,43 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Current Location</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Get Current Location</h1>
+
+    <button id="getLocationBtn">Get Location</button>
+
+    <!--<div id="location"></div>-->
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <textarea rows="5" cols="100" id="location"></textarea>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            $('#getLocationBtn').click(function () {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                } else {
+                    $('#location').text("Geolocation is not supported by this browser.");
+                }
+            });
+        });
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+            $('#location').text("Latitude: " + latitude + ", Longitude: " + longitude);
+        }
+    </script>
+</body>
+</html>
