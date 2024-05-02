@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+    <style>
+        #target {
+            height: 250px;
+            border: 2px solid grey;
+            width: 400px;
+        }
+    </style>
+
+
+</head>
+<body>
+    <h2>Move Image Anywhere On Page</h2>
+
+
+    <hr />
+    <span>&#128513</span> | <span>&#128514</span>
+    <hr />
+
+
+    <script src="scripts/Jquery.min.js"></script>
+    <table>
+        <tr>
+            <td>Date Of Birth</td>
+            <td>
+                <input type="text" id="dob" />
+            </td>
+        </tr>
+    </table>
+    <img src="Images/IMG-20240208-WA0011.jpg" height="100" width="100" />
+
+    <div id="target"></div>
+
+    <div id="modelPopup">
+        <h2>Model Popup Heading</h2>
+        <p>This div content will come as a model popup on the page</p>
+    </div>
+
+    <script src="Scripts/jQuery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+            $('#IMG-20240208-WA0011').draggable();
+
+            $('#target').droppable({
+                drop: function () {
+                    /*alert('image droped at target')*/
+                    $(this).css('background', 'grey');
+                }
+            });
+
+            $('#dob').datepicker({
+                changeMonth: true,
+                changeYear: true,
+                yearRange: '1980:2024'
+            });
+
+            $('img').click(function () {
+                $('#modelPopup').dialog();
+            });
+
+        });
+
+    </script>
+</body>
+</html>

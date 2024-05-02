@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/Jquery.min.js"></script>
+
+</head>
+<body>
+    <h2>Events Demo</h2>
+    <input type="text" id="txt"/>
+    <br /><br/>
+    <label id="lbl"></label>
+    <br /><br />
+    <input type="button" value="Click Me!!!" id="btn"/>
+
+    <script>
+        $(function () {
+            //$('#btn').click(function () {
+            //    $(this).hide();
+            //});
+
+            //$('#btn').mouseenter(function () {
+            //    $(this).css('background-color', 'red');
+            //});
+
+            //$('#btn').mouseleave(function () {
+            //    $(this).css('background-color', 'gray');
+            //});
+
+            //$('#btn').hover(function () {
+            //    $(this).css('color', 'red');
+            //}, function () {
+            //    $(this).css('color', 'black');
+            //});
+
+            //in function for multiple events.....
+            //$('#btn').on('click',function () {
+            //    $(this).hide();
+            //});
+
+            $('#btn').on({
+                click: function () { $(this).css('background-color','lightgreen'); },
+
+                mouseenter: function () {
+                    $(this).css('color','green')
+                },
+
+                mouseleave: function () {
+                    $(this).css('color', 'black');
+                },
+
+                dblclick: function () {
+                    $(this).attr('value', 'You Clicked Mee');
+                }
+            });
+
+            $('#txt').focus(function () {
+                $(this).css('background-color', 'yellow')
+            });
+
+            $('#txt').blur(function () {
+                $(this).css('background-color', 'red');
+            })
+
+            $('#txt').keyup(function () {
+                /*$(this).css('background-color', 'red');*/
+                /*var txt = document.createElement('txt').value;*/
+                var val = $(this).val();
+                $('#lbl').text(val); 
+            });
+
+            
+
+        });
+        
+    </script>
+
+</body>
+</html>

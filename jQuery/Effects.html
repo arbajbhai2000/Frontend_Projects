@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="scripts/Jquery.min.js"></script>
+    
+    <style>
+        #div1{
+            background-color:red;
+            width:30%;
+            padding:20px 10px 20px;
+            height:150px;
+            border:1px solid black;
+            border-radius:10px;
+           /* position:absolute;*/
+            display:none;
+        }
+        button{
+            width:50%;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Effects Demo</h2>
+
+    <button>Click Mee!!!</button>
+    <br /><br />
+    <div id="div1">
+        jQuery is a JavaScript Library.<br />
+
+        jQuery greatly simplifies JavaScript programming.<br />
+
+        jQuery is easy to learn.
+
+    </div>
+
+    <script>
+        $(function () {
+            $('button').click(function () {
+            //    $('#div1').hide();
+                //    $('#div1').show();
+                //    document.getElementById('div1').style.display = 'block';
+                //    $('#div1').toggle();
+                $('#div1').show(1000,function () {
+                    /*alert('effect completed');*/
+                });
+                //$('#div1').fadeIn(10000);
+                /*$('#div1').fadeOut(5000);*/
+                /*$('#div1').fadeToggle(10000);*/
+                //$('#div1').fadeToggle(10000, 0.5, function () {
+                //    alert('effect completed...');
+                //})
+
+                //slide function,slideToggle
+                //$('#div1').slideDown(1000);
+                //$('#div1').slideToggle(3000, function () {
+                //    $('button').hide();
+                //})
+
+                //animate() function
+                //$('#div1').animate({ width: '+=100px' });
+                //$('#div1').animate({ height: '+=100px' });
+                //$('#div1').animate({ width: '-=100px' });
+                //$('#div1').animate({ height: '-=100px' });
+
+                //$('#div1').animate({
+                //    marginLeft: '200px',
+                //    /* background,color:'Lightgreen'*/
+                //    backgroundColor: 'blue'
+            //});
+
+                //slide up function
+            //    $('#div1').slideUp(10000);
+            //    setInterval(stopAnimate, 3000);
+
+                $('#div1').slideDown(3000);
+                $('#div1').css('background-color', 'skyblue');
+                $('#div1').slideUp(3000);
+                $('#div1').slideDown(1000);
+
+            });
+            function stopAnimate() {
+                $('#div1').stop();
+            };
+
+
+        });
+    </script>
+</body>
+</html>
