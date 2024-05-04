@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #mainDiv {
+            border: 1px solid black;
+            padding: 5px;
+            margin: 10px;
+            color: black;
+        }
+        #mainDiv * {
+            display:block;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 5px;
+            color: black;
+        }
+    </style>
+</head>
+<body> 
+
+    <h2>Parents Demo</h2>
+    <input type="button" value="click me!!!" id="btn"/>
+    <div id="mainDiv">
+        Main Div
+        <div>
+            First Div
+            <div>
+                Inner div
+                <div> div content</div>
+                <p>Paragraph Text</p>
+                <span>
+                    Span Content
+                </span>
+                <a>a tag</a>
+                <h2>heading 2</h2>
+                <h2>heading 3</h2>
+            </div>
+        </div>
+        <div>
+            Second Div
+        </div>
+    </div>
+    <script src="scripts/Jquery.min.js"></script>
+
+    <script>
+        $('#btn').click(function () {
+        //    $('span').css({ 'color': 'red', 'border': '1px solid red' });
+            //$('span').parent().css({ 'color': 'red', 'border': '1px solid red' });
+        //    $('span').parents().css({ 'color': 'red', 'border': '1px solid red' });
+            //$('span').parentsUntil('#mainDiv').css({ 'color': 'red', 'border': '1px solid red' });
+            /*$('#mainDiv').children().css({ 'color': 'red', 'border': '1px solid red' });*/
+
+            //$('#mainDiv').find('p').css({ 'color': 'red', 'border': '1px solid red' });
+
+            //$('#mainDiv').find('span').css({ 'color': 'red', 'border': '1px solid red' });
+
+        //    $('span').siblings().css({ 'color': 'red', 'border': '1px solid red' });
+
+            //$('span').nextAll().css({ 'color': 'red', 'border': '1px solid red' });
+
+            //$('span').next().css({ 'color': 'red', 'border': '1px solid red' });
+
+            //$('a').nextUntil('span').css({ 'color': 'red', 'border': '1px solid red' });
+            $('span').prev().css({ 'color': 'red', 'border': '1px solid red' });
+            $('span').prevAll().css({ 'color': 'red', 'border': '1px solid red' });
+            $('a').prevUntil('span').css({ 'color': 'red', 'border': '1px solid red' });
+        })
+    </script>
+
+</body>
+</html>

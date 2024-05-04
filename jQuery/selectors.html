@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1 class="yellow" name="heading">Selectors Demo </h1>
+
+    <input type="button" value="click me!!!" id="btn"/>
+
+    <p>First Paragraph</p>
+    <p class="yellow" name="second">Second Paragraph</p>
+    <p class="yellow">Third Paragraph</p>
+
+    <div>
+        <p>Forth Paragraph [Inside div]</p>
+    </div>
+
+    <ul>
+        <li>Tea</li>
+        <li>Milk</li>
+        <li>Coffee</li>
+    </ul>
+    <ul>
+        <li>Wada Pav</li>
+        <li>Samosa</li>
+        <li>idli</li>
+    </ul>
+
+
+
+    <table border="1">
+        <tr>
+            <td>101</td>
+            <td>Arbaj</td>
+            <td>Barshi</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Novfil</td>
+            <td>Pune</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>Suraj</td>
+            <td>Solapur</td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>Jishan</td>
+            <td>Latur</td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>Swapnil</td>
+            <td>Mumbai</td>
+        </tr>
+    </table>
+
+
+    <script src="scripts/Jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#btn').click(function () {
+                //$('.yellow').css('background-color', 'yellow');
+                //$('p.yellow').css('background-color', 'yellow');
+                //$('p').css('background-color', 'yellow');
+                //$('div p').css('background-color', 'yellow');
+                //$('p:first').css('background-color', 'yellow');
+                //$('p:eq(1)').css('background-color', 'yellow');
+                //$(this).css('background-color', 'yellow');
+                //$('*').css('background-color', 'yellow');
+                //$('[name]').css('background-color', 'yellow');
+                //$('[name=heading]').css('background-color', 'yellow');
+                //$('tr').css('background-color', 'yellow');
+                //$('tr:odd').css('background-color', 'yellow');
+                //$('tr:even').css('background-color', 'Red');
+                //$('li').css('background-color', 'yellow');
+                //$('li:first').css('background-color', 'yellow');
+                $('li:first-child').css('background-color', 'yellow');
+
+
+
+
+
+
+
+            });
+        });
+    </script>
+
+</body>
+</html>
