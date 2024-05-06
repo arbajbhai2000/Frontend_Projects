@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Machine Details</title>
+</head>
+<body>
+    <h2>User Machine Details</h2>
+    <p><strong>Browser Name:</strong> <span id="browserName"></span></p>
+    <p><strong>Device:</strong> <span id="device"></span></p>
+    <p><strong>Device Model:</strong> <span id="deviceModel"></span></p>
+
+    <script>
+        // Retrieve Browser Name
+        var browserName = navigator.userAgent;
+        document.getElementById("browserName").innerText = browserName;
+
+        // Retrieve Device
+        var device = "Desktop";
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            device = "Mobile";
+        }
+        document.getElementById("device").innerText = device;
+
+        // Retrieve Device Model - Not always accessible and not recommended due to privacy concerns
+        var deviceModel = "Dell Inspiron 3335";
+        // You may try to extract device model based on userAgent, but it's not reliable and might be inaccurate
+        // Example: deviceModel = navigator.userAgent.match(/iPhone|iPad|iPod/)[0] || "Unknown";
+        document.getElementById("deviceModel").innerText = deviceModel;
+    </script>
+</body>
+</html>
