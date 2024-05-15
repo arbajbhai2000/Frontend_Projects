@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personalized Greeting</title>
+    <style>
+        #greeting {
+            font-size: 24px;
+            color: green;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter your name for a personalized greeting</h1>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="greetButton">Greet Me</button>
+    <p id="greeting"></p>
+
+    <script>
+        // Function to display the personalized greeting
+        function displayGreeting() {
+            // Get the input element and the value
+            var name = document.getElementById('nameInput').value;
+            
+            // Get the greeting element
+            var greetingElement = document.getElementById('greeting');
+            
+            // Set the greeting text
+            if (name) {
+                greetingElement.textContent = 'Hello, ' + name + '!';
+                greetingElement.style.display = 'block';
+            } else {
+                greetingElement.textContent = 'Please enter your name.';
+                greetingElement.style.display = 'block';
+            }
+        }
+
+        // Add an event listener to the button
+        document.getElementById('greetButton').addEventListener('click', displayGreeting);
+    </script>
+</body>
+</html>
