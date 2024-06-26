@@ -1,0 +1,108 @@
+<!-- calculator.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .calculator {
+      width: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .button {
+      width: 40px;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #ccc;
+    }
+    #display {
+      width: 100%;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 24px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" readonly>
+    <div class="button-row">
+      <button class="button" onclick="appendDigit(7)">7</button>
+      <button class="button" onclick="appendDigit(8)">8</button>
+      <button class="button" onclick="appendDigit(9)">9</button>
+      <button class="button" onclick="performOperation('/')">/</button>
+    </div>
+    <div class="button-row">
+      <button class="button" onclick="appendDigit(4)">4</button>
+      <button class="button" onclick="appendDigit(5)">5</button>
+      <button class="button" onclick="appendDigit(6)">6</button>
+      <button class="button" onclick="performOperation('*')">x</button>
+    </div>
+    <div class="button-row">
+      <button class="button" onclick="appendDigit(1)">1</button>
+      <button class="button" onclick="appendDigit(2)">2</button>
+      <button class="button" onclick="appendDigit(3)">3</button>
+      <button class="button" onclick="performOperation('-')">-</button>
+    </div>
+    <div class="button-row">
+      <button class="button" onclick="appendDigit(0)">0</button>
+      <button class="button" onclick="appendDigit('.')">.</button>
+      <button class="button" onclick="performOperation('+')">+</button>
+      <button class="button" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let displayValue = '';
+    let operator = '';
+    let operand1 = '';
+
+    function appendDigit(digit) {
+      displayValue += digit;
+      document.getElementById('display').value = displayValue;
+    }
+
+    function performOperation(op) {
+      operand1 = displayValue;
+      operator = op;
+      displayValue = '';
+      document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+      let operand2 = displayValue;
+      let result = 0;
+
+      switch (operator) {
+        case '+':
+          result = parseFloat(operand1) + parseFloat(operand2);
+          break;
+        case '-':
+          result = parseFloat(operand1) - parseFloat(operand2);
+          break;
+        case '*':
+          result = parseFloat(operand1) * parseFloat(operand2);
+          break;
+        case '/':
+          result = parseFloat(operand1) / parseFloat(operand2);
+          break;
+      }
+
+      displayValue = result.toString();
+      document.getElementById('display').value = displayValue;
+    }
+  </script>
+</body>
+</html>
